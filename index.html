@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>aws deploy to website</title>
+    </head>
+    <style>
+        .main-sec {
+        margin-top: 10px;
+        margin-left: 260px;
+        display: grid;
+        grid-template-columns: 4fr 1fr 7fr;
+    }
+    p {
+    text-align: justify;
+  }
+    </style>
+    <body bgcolor="grey">
+        <div class="main-sec">
+        <center><u><h1>AWS instance deploy to a website</h1></u>
+        <h3>Benefits</h3>
+        <ls>1. Scalability: Easily adjust resources to handle traffic spikes.<br>
+            2. Reliability: High availability with redundant infrastructure.<br>
+            3. Flexibility: Choose from various instance types and services.<br>
+            4. Security: Built-in features for protecting data and resources.<br>
+            5. Global Reach : Serve content from data centers worldwide.</ls>
+        <h2>Steps to build the project</h2>
+        <h3>Step 1. Launch and EC2 instance</h3>
+        <img src="https://i.ibb.co/kypzYsV/instance.png">
+         <p>Begin by logging into the AWS Management Console and navigating to the EC2 service.
+         Launch a new EC2 instance by> selecting an appropriate Amazon Machine Image (AMI),
+         choosing the instance type,configuring instance details such as network settings and storage,
+          and finally, creating or selecting a security group to allow inbound HTTP (port 80) and HTTPS (port 443) traffic.</p>
+          <h3>Step 2.Connect to Your Instance</h3>
+          <img src="https://i.ibb.co/KN9dqzv/connect.png">
+          <p>Once your instance is running, connect to it using SSH (Secure Shell) from your local machine. You'll use the private key associated with your chosen key pair to authenticate.</p>
+          <h3>Step 3.Install Required Software</h3>
+         <img src="https://i.ibb.co/B2NsVWp/mobcterm.png">
+          <p>MobaXterm is a comprehensive remote computing tool for Windows that integrates various network tools into a single application. It combines a terminal emulator, X server, SSH client, and other network tools into one package,
+             providing a convenient way to access remote systems and perform various tasks.MobaXterm comes with a built-in SSH client that allows users to securely connect to remote servers and transfer files using the SSH protocol. 
+             It supports various authentication methods, including password authentication, public-key authentication, and keyboard interactive authentication.
+             Enter the IP address of the remote host and provide the username specified in the EC2 instance connect section.</p>
+             <img src="https://i.ibb.co/sV0Vk07/Screenshot-2024-05-23-162928.png">
+            <p>Click on "Use private key" and add the key that was created for the instance.Then click ok</p>
+        <h3>Step 4.Run command lines</h3>
+        <img src="https://i.ibb.co/VDwkjP9/Screenshot-2024-05-23-164247.png">
+        <b><p>1.sudo su</p>
+        <p>2.yum update -y</p>
+        <p>3.yum install httpd -y</p></b>
+        <p>wait until it gets installed</p>
+        <p>In the above terminal httpd is already installed in my server</p>
+        <h3>Step 5.Upload Website Files</h3>
+        <img src="https://i.ibb.co/441D983/Screenshot-2024-05-23-170503.png">
+        <p>Transfer your website's files (HTML, CSS, JavaScript, images, etc.) to your EC2 instance. 
+        You can use SCP (Secure Copy Protocol) or SFTP (SSH File Transfer Protocol) to securely transfer files from your local machine to the instance.
+        Alternatively, you can create a file within the directory /var/www/httpd.
+        <h3>Step 6.Configure Web Server</h3>
+        <img src="https://i.ibb.co/mF9qTpz/Screenshot-2024-05-23-171618.png">
+        <b><p>command -service httpd start</p></b>
+        <p>Now, open a new tab and enter the IP address of the instance.</p>
+        <img src="https://i.ibb.co/T8L4pzK/Screenshot-2024-05-23-175617.png">
+        <p>Once everything is set up, test your website to ensure that it's functioning correctly. Check for any errors or issues and make necessary adjustments.</p>
+
+
+        </p>
+
+
+        
+
+
+
+           
+         </div>
+        </center>
+    </body>
+</html>
